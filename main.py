@@ -41,8 +41,8 @@ def capture(app_name: str):
         image -- image array after passing through cv2
         left -- how many pixes from the left to the to top-left corner
         top -- how many pixes from the top to the to top-left corner
-        right -- how
-        bottom -- num
+        right -- ??? https://www.reddit.com/r/learnpython/comments/as73wp/is_there_a_way_to_have_pyautogui_to_use_client/
+        bottom -- ???
     '''
     hwnd = win32gui.FindWindow(None, app_name)
     shell = win32com.client.Dispatch("WScript.Shell")
