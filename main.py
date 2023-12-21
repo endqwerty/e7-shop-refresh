@@ -12,23 +12,38 @@ from pytesseract import pytesseract
 BoundingBoxes = tuple[int, int, int, int]
 
 # THESE ARE THE VARIABLE YOU SHOULD BE CHANGING!
+############################################################
 Application = "BlueStacks App Player"  # This is the Application you are using.
+# Assumes windows device
 # Copy paste the file directory then add \.
+# path to tesseract.exe
 pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
-# ^^^^
+############################################################
 
-Array_Items = ['Covenant', 'Mystic']
+Array_Items = ['Covenant', 'Mystic']  # item names to look for to purchase
+
+# location of the window
 LEFT = 0
 TOP = 1
 WIDTH = 2
 HEIGHT = 3
 
+# global timeout in seconds
 TIMEOUT = 1
-
-# 223 / 542
 
 
 def capture(app_name: str):
+    '''
+    Find and capture the window
+    Args:
+        app_name -- name of the window to search for
+    Returns:
+        image -- image array after passing through cv2
+        left -- how many pixes from the left to the to top-left corner
+        top -- how many pixes from the top to the to top-left corner
+        right -- how
+        bottom -- num
+    '''
     hwnd = win32gui.FindWindow(None, app_name)
     shell = win32com.client.Dispatch("WScript.Shell")
     if hwnd:
