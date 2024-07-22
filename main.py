@@ -13,7 +13,7 @@ BoundingBoxes = tuple[int, int, int, int]
 
 # THESE ARE THE VARIABLE YOU SHOULD BE CHANGING!
 ############################################################
-Application = "BlueStacks App Player"  # This is the Application you are using.
+Application = "LDPlayer"  # This is the Application you are using.
 # Assumes windows device
 # Copy paste the file directory then add \.
 # path to tesseract.exe
@@ -120,9 +120,9 @@ def click_with_window_offset(box: BoundingBoxes, x, y):
 
 
 def scroll_down(x1: int, y1: int, x2: int, y2: int):
-    from_pos_x = (((x2 - x1) * 3) / 4) + x1
+    from_pos_x = (((x2 - x1) * 2) / 4) + x1
     from_pos_y = ((y2 - y1) / 4) + y1
-    to_pos_y = (((y2 - y1) * 3) / 4) + y1
+    to_pos_y = (((y2 - y1) * 3.5) / 4) + y1
     pyautogui.moveTo(x1 + from_pos_x, y1 + to_pos_y)
     pyautogui.dragTo(x1 + from_pos_x, y1 + from_pos_y, 0.25, button='left')
 
